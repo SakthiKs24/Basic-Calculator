@@ -27,8 +27,6 @@ function App() {
     }
   };
   
-  
-
   return (
     <div className="calculator-container">
       <h2 className="calculator-title">Calculator App</h2>
