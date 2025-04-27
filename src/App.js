@@ -8,6 +8,7 @@ function App() {
   const handleClick = (value) => {
     setInput(input + value);
   };
+  
 
   const handleClear = () => {
     setInput("");
@@ -16,11 +17,16 @@ function App() {
 
   const handleCalculate = () => {
     try {
-      setResult(eval(input)); // Dynamically calculate the result using eval
+      // Replace '×' with '*' and '÷' with '/' for JavaScript compatibility
+      const sanitizedInput = input.replace("×", "*").replace("÷", "/");
+      
+      // Evaluate the sanitized expression
+      setResult(eval(sanitizedInput));
     } catch (error) {
       setResult("Error");
     }
   };
+  
 
   return (
     <div className="calculator-container">
@@ -51,7 +57,7 @@ function App() {
           <button onClick={handleCalculate}>=</button>
           <button onClick={() => handleClick("÷")}>÷</button>
 
-          <button onClick={handleClear} className="clear-button">C</button>
+          <button onClick={handleClear} className="clear-button">Clear</button>
         </div>
       </div>
     </div>
