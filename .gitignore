@@ -6,3 +6,5 @@ npm-debug.log
 yarn-error.log
 dist/
 build/
+node_modules/.cache/.eslintcache
+node_modules/.cache/default-development/1.pack
